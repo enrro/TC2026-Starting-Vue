@@ -13,8 +13,8 @@
                 <li v-for="item in names" v-text="item"></li>
             </ul>
             
-            <input type="" name="" value="">
-            <button type="">add name</button>
+            <input type="" name="" value="" v-model="newName">
+            <button v-on:click="addName">add name</button>
         </div>
 
 
@@ -24,7 +24,18 @@
             var app = new Vue({
                 el: '#root',
                 data:{
+                    newName: '',
                     names:['Joe', 'Mary', 'Jane','jack']
+                },
+
+                methods:{
+                    addName(){
+                        this.names.push(this.newName);  
+                        this.newName = '';
+                    }
+                },
+                mounted(){
+
                 }
             })
         </script>
