@@ -8,12 +8,16 @@
         .color-red{
             color:red;
         }
+        .color-blue{
+            color:blue;
+        }
         </style>
     </head>
     <body>
         <div id="root">
+            <!-- we can reference a class in vue -->
             <button :title="title">hover over</button>
-
+            <h1 :class="className">Hello world</h1>
         </div>
 
 
@@ -25,7 +29,8 @@
                 el: '#root',
                 
                 data:{
-                    title:'now the title is being seen through javascript'
+                    title:'now the title is being seen through javascript',
+                    className: 'color-red'
                 }
 
             });
