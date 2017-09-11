@@ -4,18 +4,18 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <style>
+        .color-red{
+            color:red;
+        }
+        </style>
     </head>
     <body>
         <div id="root">
             
-            <ul>
-                <li v-for="item in names" v-text="item"></li>
-            </ul>
-            
-            <input type="" name="" value="" v-model="newName">
-            <!-- // the add symbol is the same as the v-on -->
-            <button @click="addName">add name</button>
+            <button v-bind:title="title"> hover over me</button>
+            <h1 :class="className">Hello world</h1>
+
         </div>
 
 
@@ -25,19 +25,10 @@
             var app = new Vue({
                 el: '#root',
                 data:{
-                    newName: '',
-                    names:['Joe', 'Mary', 'Jane','jack']
-                },
-
-                methods:{
-                    addName(){
-                        this.names.push(this.newName);  
-                        this.newName = '';
-                    }
-                },
-                mounted(){
-
+                    className = 'color-red',
+                    title: 'Now the title is being set through javascript',
                 }
+
             })
         </script>
     </body>
