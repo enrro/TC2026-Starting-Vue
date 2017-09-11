@@ -12,9 +12,7 @@
     </head>
     <body>
         <div id="root">
-            
-            <button v-bind:title="title"> hover over me</button>
-            <h1 :class="className">Hello world</h1>
+            <button :title="title">hover over</button>
 
         </div>
 
@@ -23,13 +21,14 @@
 
         <script>
             var app = new Vue({
+
                 el: '#root',
+                
                 data:{
-                    className = 'color-red',
-                    title: 'Now the title is being set through javascript',
+                    title:'now the title is being seen through javascript'
                 }
 
-            })
+            });
         </script>
     </body>
 </html>
